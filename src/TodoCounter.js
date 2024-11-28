@@ -1,8 +1,13 @@
-function TodoCounter() {
+import './TodoCounter.css'
+
+function TodoCounter({ total, completed }) {
     return (
-      <h1>
-        Has completado 3 de 5 TODOS
-      </h1>
+      <header>
+        <h1>
+          {completed} of {total} TO-DOS Done
+        </h1>
+        <img src='cat-with-umbrella.png' className='cat-image' alt='Cat with umbrella' />
+      </header>
     );
 }
 

@@ -1,0 +1,17 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+  
+.header h1 {
+    font-size: 1.8rem;
+    color: #444;
+    margin: 0;
+}
+
+.cat-image {
+    width: 50px;
+    height: auto;
+}
