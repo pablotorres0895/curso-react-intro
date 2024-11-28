@@ -1,9 +1,10 @@
+import './TodoItem.css'
 function TodoItem(props) {
     return (
-      <li>
-        <span>V </span>
-        <p>{props.text}</p>
-        <span>X</span>
+      <li className="task">
+        <span class="check-icon">✔</span>
+        <span class="task-text">{props.text}</span>
+        <span class="delete-icon">🗑</span>
       </li>
     );
 }

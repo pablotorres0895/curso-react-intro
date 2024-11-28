@@ -2,10 +2,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
   
-.header h1 {
+header h1 {
     font-size: 1.8rem;
     color: #444;
     margin: 0;
