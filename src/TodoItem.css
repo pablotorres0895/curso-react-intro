@@ -16,10 +16,12 @@
   
 .check-icon {
     font-size: 1.2rem;
-    color: #4caf50; /* Green for checked tasks */
+    color: #757e76; /* Green for checked tasks */
     cursor: pointer;
 }
-  
+.check-icon--active {
+    color: #4caf50;
+}
 .task-text {
     flex: 1;
     margin: 0 10px;
@@ -31,4 +33,8 @@
     font-size: 1.2rem;
     color: #f44336; /* Red for delete button */
     cursor: pointer;
+}
+
+.TodoItem-p--complete {
+    text-decoration: line-through;
 }

@@ -6,7 +6,7 @@ function TodoCounter({ total, completed }) {
         <h1>
           {completed} of {total} TO-DOS Done
         </h1>
-        <img src='cat-with-umbrella.png' className='cat-image' alt='Cat with umbrella' />
+        <img src='cat-with-umbrella.gif' className='cat-image' alt='Cat with umbrella' />
       </header>
     );
 }
