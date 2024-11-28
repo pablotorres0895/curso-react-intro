@@ -1,6 +1,7 @@
+import './CreateTodoButton.css'
 function CreateTodoButton() {
     return (
-        <button>+</button>
+        <button className="add-task-btn">+</button>
     );
 }
 
