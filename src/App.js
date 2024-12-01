@@ -17,17 +17,28 @@ const defaultTodos = [
 localStorage.setItem('TODOS_V1', JSON.stringify(defaultTodos));
 */
 
-function App() {
-  const localStorageTodos = localStorage.getItem('TODOS_V1');
-  let parsedTodos; 
-  if (!localStorageTodos){
-    localStorage.setItem('TODOS_V1', JSON.stringify([]));
-    parsedTodos = [];
+function useLocalStorage(itemName, initialValue){
+  const localStorageItem = localStorage.getItem(itemName);
+  let parsedItems; 
+  if (!localStorageItem){
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItems = initialValue;
   }else {
-    parsedTodos = JSON.parse(localStorageTodos);
+    parsedItems = JSON.parse(localStorageItem);
   }
+  const [item, setItem] = React.useState(parsedItems);
+  
+  const saveItem = (newItems) => {
+    localStorage.setItem(itemName, JSON.stringify(newItems));
+    setItem(newItems);
+  }
+  return [item, saveItem];
+}
+
+function App() {
+  
+  const [todos, saveTodo] = useLocalStorage('TODOS_V1', []); 
   const [searchValue, setSearchValue] = React.useState('');
-  const [todos, setTodos] = React.useState(parsedTodos);
   
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -36,10 +47,7 @@ function App() {
     const searchText = searchValue.toLowerCase()
     return todoText.includes(searchText)
   })
-  const saveTodo = (newTodos) => {
-    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
-    setTodos(newTodos)
-  }
+  
   const completeTodo = (text) => {
     const newTodos = [...todos];
     const todoIndex = newTodos.findIndex((todo) => todo.text == text);
