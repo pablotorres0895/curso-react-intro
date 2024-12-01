@@ -1,7 +1,7 @@
 import './TodoCounter.css'
 
 function TodoCounter({ total, completed }) {
-    if (parseInt(total) === parseInt(completed)){
+    if (parseInt(total) === parseInt(completed) && (parseInt(total) > 0 && parseInt(completed) > 0)){
       return (
         <header>
           <h1>
