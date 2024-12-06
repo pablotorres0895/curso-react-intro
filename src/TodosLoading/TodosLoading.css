@@ -1,0 +1,57 @@
+  
+
+  .todo-list {
+    width: 90%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .skeleton-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .skeleton-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ddd;
+    flex-shrink: 0;
+  }
+
+  .skeleton-text {
+    height: 16px;
+    width: 80%;
+    background: #ddd;
+    border-radius: 5px;
+    margin-left: 10px;
+  }
+
+  .skeleton-button {
+    height: 16px;
+    width: 16px;
+    background: #ddd;
+    border-radius: 5px;
+    margin-left: auto;
+  }
+
+  /* Skeleton loading animation */
+  .skeleton-circle,
+  .skeleton-text,
+  .skeleton-button {
+    animation: shimmer 1.5s infinite linear;
+    background: linear-gradient(to right, #eee 25%, #ddd 50%, #eee 75%);
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
