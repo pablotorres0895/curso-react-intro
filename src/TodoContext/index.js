@@ -11,7 +11,8 @@ function TodoProvider({ children }){
         error
     } = useLocalStorage('TODOS_V1', []); 
     const [searchValue, setSearchValue] = React.useState('');
-      
+    const [openModal, setOpenModal] = React.useState(false);
+       
         const completedTodos = todos.filter(todo => !!todo.completed).length;
         const totalTodos = todos.length;
         const seachedTodos = todos.filter( todo => {
@@ -44,7 +45,9 @@ function TodoProvider({ children }){
             setSearchValue,
             seachedTodos,
             completeTodo,
-            deleteTodo
+            deleteTodo,
+            openModal,
+            setOpenModal
         }}>
             { children }
         </TodoContext.Provider>
